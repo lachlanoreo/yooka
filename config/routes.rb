@@ -18,9 +18,19 @@ Rails.application.routes.draw do
   get 'users/tools'
   get 'users/support'
   get 'users/teacherhome'
-  root to: 'pages#home'
   get 'checkin', to: 'pages#checkin'
   get 'checkin2', to: 'pages#checkin2'
+
+devise_scope :user do
+  authenticated :user do
+    root 'users#home', as: :authenticated_root
+  end
+
+  unauthenticated do
+    root 'devise/sessions#new', as: :unauthenticated_root
+  end
+end
+
 
   devise_for :users
   get 'users', to: "users#home"
