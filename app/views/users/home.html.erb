@@ -60,9 +60,9 @@
       <% end %>
     </div>
 </div>
-    <h3 id="leaderboard-header"><strong>Challenge Leaderboard</strong></h3>
-<div class="dashboard-leaderboard dashboard-element mb-4">
-        <table style="width: 100%" class="table leaderboard mb-0">
+<h3 id="leaderboard-header"><strong>Challenge Leaderboard</strong></h3>
+<div class="dashboard-element mb-4">
+        <table style="width: 100%" class="leaderboard mb-0">
             <% counter = 1 %>
             <% @short_leaderboard.each do |user| %>
                 <tr class=<%="leaderboard-current-user" if user == current_user %>>
